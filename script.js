@@ -161,8 +161,6 @@ function preview_gk2(){
 
 function sortear_times(){
     
-    const equipes = document.querySelector('#equipes_prontas')
-    const confirmados = document.querySelector('#form_jogadores')
 
     const equipe1 = document.querySelector("#eq1")
     const equipe2 = document.querySelector("#eq2")
@@ -182,53 +180,74 @@ function sortear_times(){
 
     let jogadores = [jogador1,jogador2,jogador3,jogador4,jogador5,jogador6, jogador7,jogador8,jogador9,jogador10,jogador11,jogador12]
 
+
     function shuffleArray(jogadores) {
         // Loop em todos os elementos
-    for (let i = jogadores.length - 1; i > 0; i--) {
+        for (let i = jogadores.length - 1; i > 0; i--) {
             // Escolhendo elemento aleatório
-        const j = Math.floor(Math.random() * (i + 1));
-        // Reposicionando elemento
-        [jogadores[i], jogadores[j]] = [jogadores[j], jogadores[i]];
+            const j = Math.floor(Math.random() * (i + 1));
+            // Reposicionando elemento
+            [jogadores[i], jogadores[j]] = [jogadores[j], jogadores[i]];
+        }
+        // Retornando array com aleatoriedade
+        return jogadores;
+        }
+        
+        console.log(shuffleArray(jogadores));
+
+        
+        novoArray = []
+        corte = 5;
+
+        for (var i = 0; i < jogadores.length; i = i + corte) {
+        novoArray.push(jogadores.slice(i, i + corte));
+        }
+
+        console.log(novoArray);
+        
+        let time1 = novoArray[0]
+        let time2 = novoArray[1]
+        let banco = novoArray[2]
+        // jogadores do time 1 titulares
+        let j1_t1 = time1[0] 
+        let j2_t1 = time1[1]
+        let j3_t1 = time1[2]
+        let j4_t1 = time1[3]
+        let j5_t1 = time1[4]
+        // reserva do time 1
+        let reserva_time1 = banco[0]
+        // jogadores do time 2 titulares
+        let j1_t2 = time2[0]
+        let j2_t2 = time2[1]
+        let j3_t2 = time2[2]
+        let j4_t2 = time2[3]
+        let j5_t2 = time2[4]
+        // reserva do time 2
+        let reserva_time2 = banco[1]
+
+
+        equipe1.innerHTML =` Time 1 -  ${j1_t1} 🏃, ${j2_t1} 🏃, ${j3_t1} 🏃, ${j4_t1} 🏃, ${j5_t1} 🏃, reserva: ${reserva_time1}🏃 `
+
+        equipe2.innerHTML = `Time 2 (colete 🦺) - ${j1_t2} 🏃, ${j2_t2} 🏃, ${j3_t2} 🏃, ${j4_t2} 🏃, ${j5_t2} 🏃 reserva: ${reserva_time2} 🏃`
+        
+        let form_jogadores = document.querySelector("#form_jogadores")
+        let equipes_prontas = document.querySelector("#equipes_prontas")
+        if (form_jogadores.style.display === "block") {
+            equipes_prontas.style.display = "block"
+            form_jogadores.style.display = "none"
+        } else {
+            form_jogadores.style.display = "block"
+        }
+    
+}
+function nv_sorteio(){
+    let form_jogadores = document.querySelector("#form_jogadores")
+    let equipes_prontas = document.querySelector("#equipes_prontas")
+
+    if (equipes_prontas.style.display === "block") {
+        equipes_prontas.style.display = "none"
+        form_jogadores.style.display ="block"
+    } else {
+        equipes_prontas.style.display = "block"
     }
-    // Retornando array com aleatoriedade
-    return jogadores;
-    }
-    
-    console.log(shuffleArray(jogadores));
-
-    
-    novoArray = []
-    corte = 5;
-
-    for (var i = 0; i < jogadores.length; i = i + corte) {
-    novoArray.push(jogadores.slice(i, i + corte));
-    }
-
-    console.log(novoArray);
-    
-    let time1 = novoArray[0]
-    let time2 = novoArray[1]
-    let banco = novoArray[2]
-    // jogadores do time 1 titulares
-    let j1_t1 = time1[0] 
-    let j2_t1 = time1[1]
-    let j3_t1 = time1[2]
-    let j4_t1 = time1[3]
-    let j5_t1 = time1[4]
-    // reserva do time 1
-    let reserva_time1 = banco[0]
-    // jogadores do time 2 titulares
-    let j1_t2 = time2[0]
-    let j2_t2 = time2[1]
-    let j3_t2 = time2[2]
-    let j4_t2 = time2[3]
-    let j5_t2 = time2[4]
-    // reserva do time 2
-    let reserva_time2 = banco[1]
-
-
-    equipe1.innerHTML =` Time 1 -  ${j1_t1} 🏃, ${j2_t1} 🏃, ${j3_t1} 🏃, ${j4_t1} 🏃, ${j5_t1} 🏃, reserva: ${reserva_time1}🏃 `
-
-    equipe2.innerHTML = `Time 2 (colete 🦺) - ${j1_t2} 🏃, ${j2_t2} 🏃, ${j3_t2} 🏃, ${j4_t2} 🏃, ${j5_t2} 🏃 reserva: ${reserva_time2} 🏃`
-    
 }
