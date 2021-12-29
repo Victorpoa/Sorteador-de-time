@@ -55,7 +55,7 @@ header{
     margin: 2px;
 }
 input[type="text"]{
-    height: 5px;
+    height: 10px;
     width: 100px;
 }
 #btn_sortear{
