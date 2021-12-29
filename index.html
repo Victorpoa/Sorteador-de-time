@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./imagens/Soccer-Ball-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Amigos do futebol</title>
+</head>
+<body>
+    <header>
+        <div class="opcoes">
+            <span class="opcao" id="escalacao_guia" onclick="pg1()">
+                Escalação
+            </span>
+            <span class="opcao" id="jogadores_guia" onclick="pg2()">
+                Sortear times
+            </span>
+        </div>
+    </header>
+    <section id="escalacao">
+        <div id="goleiro_1">
+            <input type="file" name="gk1" id="gk1" required onchange="preview_gk1()">
+            <label for="gk1"><img src="./imagens/luvas_gk.png" alt="goleiro_1" id="ft_gk1"></label>
+            <P><input type="text" name="nome_goleiro" id="nome_goleiro" class="nomes_background_none" placeholder="Goleiro"></P>
+        </div>
+        <div id="zaga">
+            <span id="zg1">
+                <input type="file" name="z1_file" id="z1_file" required onchange="preview_z1()">
+                <label for="z1_file"><img src="./imagens/jogador.png" id="ft_z1" alt="jogador"></label>
+            </span>
+            <span id="zg2">
+                <input type="file" name="z2_file" id="z2_file" required onchange="preview_z2()">
+                <label for="z2_file"><img src="./imagens/jogador.png" id="ft_z2" alt="jogador"></label>
+            </span>
+            <div>
+                <input type="text" name="nome_zg1" id="nome_zg1" class="nomes_background_none" placeholder="Jogador">
+                <input type="text" name="nome_zg2" id="nome_zg2" class="nomes_background_none" placeholder="Jogador">
+            </div>
+        </div>
+        <div id="ataque_time1">
+            <span id="atq1">
+                <input type="file" name="a1_file" id="a1_file" required onchange="preview_a1()">
+                <label for="a1_file"><img src="./imagens/jogador.png" id="ft_a1" alt="jogador"></label>
+            </span>
+            <span id="atq2">
+                <input type="file" name="a2_file" id="a2_file" required onchange="preview_a2()">
+                <label for="a2_file"><img src="./imagens/jogador.png" id="ft_a2" alt="jogador"></label>
+            </span>
+            <div>
+                <input type="text" name="nome_a1" id="nome_a1" class="nomes_background_none" placeholder="Jogador">
+                <input type="text" name="nome_a2" id="nome_a2" class="nomes_background_none" placeholder="Jogador">
+            </div>
+        </div>
+        <hr>
+        <div id="time2">
+            <div id="ataque_time2">
+                <p><input type="text" name="nome_a1_time2" id="nome_a1_time2" class="nomes_background_none" placeholder="Jogador"> <input type="text" name="nome_a2_time2" id="nome_a2_time2" placeholder="Jogador" class="nomes_background_none"></p>
+                <span id="atq1_time2">
+                    <input type="file" name="a1_time2_file" id="a1_time2_file" required onchange="preview_a1_time2()">
+                    <label for="a1_time2_file"><img src="./imagens/jogador.png" id="fta1_time2" alt="jogador"></label>
+                </span>
+                <span id="atq2_time2">
+                    <input type="file" name="a2_time2_file" id="a2_time2_file" required onchange="preview_a2_time2()">
+                    <label for="a2_time2_file"> <img src="./imagens/jogador.png" id="fta2_time2" alt="jogador"></label>
+                </span>
+            </div>
+            <div id="zg_time2">
+                <p><input type="text" name="nome_z1_time2" id="nome_z1_time2" class="nomes_background_none" placeholder="Jogador"><input type="text" name="nome_z2_time2" id="nome_z2_time2" class="nomes_background_none" placeholder="Jogador"></p>
+                <span id="z1_time2">
+                    <input type="file" name="z1_time2_file" id="z1_time2_file" required onchange="preview_z1_time2()">
+                    <label for="z1_time2_file"><img src="./imagens/jogador.png" id="ftz1_time2" alt="jogador"></label>
+                </span>
+                <span id="z2_time2">
+                    <input type="file" name="z2_time2_file" id="z2_time2_file" required onchange="preview_z2_time2()">
+                    <label for="z2_time2_file"><img src="./imagens/jogador.png" id="ftz2_time2" alt="jogador"></label>
+                </span>
+            </div>
+            <div id="goleiro_2">
+                <p><input type="text" name="nome_gk2" id="nome_gk2" class="nomes_background_none" placeholder="Goleiro"></p>
+                <input type="file" name="file_gk2" id="file_gk2" required onchange="preview_gk2()">
+                <label for="file_gk2"><img src="./imagens/luvas_gk.png" id="ft_gk2" alt="goleiro"></label>
+            </div>
+        </div>
+
+    </section>
+    <!--página 2 ↓-->
+    <section id="sorteio_times">
+        <div id="form_jogadores">
+            <h1>Sortear times</h1>
+            <p>1-<input type="text" name="jogador1" id="jogador1" placeholder="Jogador" class="nomes_background_none"></p>
+            <p>2-<input type="text" name="jogador2" id="jogador2" placeholder="Jogador" class="nomes_background_none"></p>
+            <p>3-<input type="text" name="jogador3" id="jogador3" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>4- <input type="text" name="jogador4" id="jogador4" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>5-<input type="text" name="jogador5" id="jogador5" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>6-<input type="text" name="jogador6" id="jogador6" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>7-<input type="text" name="jogador7" id="jogador7" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>8-<input type="text" name="jogador8" id="jogador8" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>9-<input type="text" name="jogador9" id="jogador9" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>10-<input type="text" name="jogador10" id="jogador10" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>11-<input type="text" name="jogador11" id="jogador11" class="nomes_background_none" placeholder="Jogador"></p>
+            <p>12-<input type="text" name="jogador12" id="jogador12" class="nomes_background_none" placeholder="Jogador"></p>
+            <input type="button" value="Sortear" id="btn_sortear" onclick="sortear_times()">
+        </div>
+        <hr>
+        <div id="equipes_prontas">
+            <h1>Equipes:</h1>
+            <div id="eq1">
+                <!--time 1-->
+            </div>
+            <div id="eq2">
+                <!--time 2-->
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

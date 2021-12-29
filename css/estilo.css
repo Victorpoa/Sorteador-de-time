@@ -1,0 +1,79 @@
+
+@charset "utf8";
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*{
+    font-family: 'Permanent Marker', cursive;
+    height: auto;
+    width: auto;
+}
+h1{
+    text-align: center;
+}
+input, h1, p{
+    margin-left: 5px;
+    border-radius: 5px;
+}
+input[type='file']{
+    display: none;
+}
+body{
+    margin: 0;
+    background-color: #0099CC;
+}
+header{
+    background-color: black;
+    text-align: center;
+}
+.opcao{
+    color: aliceblue;
+    padding: 20px;
+}
+.opcao:hover{
+    text-decoration: underline;
+}
+#escalacao{
+    text-align: center;
+    background-size:auto ;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+    margin: 20px;
+}
+#plano_de_fundo{
+    height: 600px;
+    width: 400px;
+}
+#sorteio_times{
+    display: none;
+    text-align: center;
+}
+#img, #ft_gk1, #ft_z1, #ft_z2, #ft_a1, #ft_a2, #fta1_time2,#fta2_time2, #ftz1_time2, #ftz2_time2 ,#ft_gk2{
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    margin: 2px;
+}
+input[type="text"]{
+    height: 5px;
+    width: 100px;
+}
+#btn_sortear{
+    color: rgb(99, 32, 6);
+    background-color: green;
+    border-radius: 5px;
+}
+#goleiro_1{
+    text-align:center;
+    
+}
+#zaga{
+    margin: 0px 0;
+}
+#zg1,#atq1, #atq1_time2, #z1_time2{
+    margin-right: 50px;
+}
+.nomes_background_none{
+    color: rgb(124, 8, 8);
+    background: none;
+}
