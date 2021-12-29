@@ -58,7 +58,7 @@ input[type="text"]{
     height: 10px;
     width: 100px;
 }
-#btn_sortear{
+#btn_sortear, #btn_nv_sorteio{
     color: rgb(99, 32, 6);
     background-color: green;
     border-radius: 5px;
