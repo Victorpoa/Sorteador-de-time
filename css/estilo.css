@@ -49,8 +49,8 @@ header{
     text-align: center;
 }
 #img, #ft_gk1, #ft_z1, #ft_z2, #ft_a1, #ft_a2, #fta1_time2,#fta2_time2, #ftz1_time2, #ftz2_time2 ,#ft_gk2{
-    height: 30px;
-    width: 30px;
+    height: 60px;
+    width: 60px;
     border-radius: 5px;
     margin: 2px;
 }
